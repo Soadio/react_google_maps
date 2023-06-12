@@ -3,31 +3,23 @@
 Implementing google maps in react using [google-map-react](https://www.npmjs.com/package/google-map-react)
 
 ```js
-import React from "react";
+import "./App.css";
 import GoogleMapReact from "google-map-react";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-export default function SimpleMap() {
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
-    },
-    zoom: 11,
-  };
-
+function App() {
   return (
-    // Important! Always set the container height explicitly
-    <div style={{ height: "100vh", width: "100%" }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
-      </GoogleMapReact>
+    <div className="app">
+      <h1>Google Maps</h1>
+
+      <figure className="maps_wrapper">
+        <GoogleMapReact
+          defaultZoom={1}
+          defaultCenter={{ lng: 3.3792, lat: 6.5244 }}
+        />
+      </figure>
     </div>
   );
 }
+
+export default App;
 ```
